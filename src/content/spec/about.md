@@ -1,9 +1,14 @@
-# About
-This is the demo site for [Fuwari](https://github.com/saicaca/fuwari).
+# 关于
+我是任渊，一个喜欢瞎捣鼓的高中生，是个音游痴
 
-::github{repo="saicaca/fuwari"}
+[IMC.RE](http://imc.re/) 成员:
+* 参与了早期IMC.RE服务器的制作
+* 网页版MC [EaglerCraft](https://ws.imc.re/eaglerx) IMC.RE汉化版本的开发
+* 现子服 [WSS](https://rymc.ltd/wss) 无政府服务器的维护者
 
-> ### Sources of images used in this site
-> - [Unsplash](https://unsplash.com/)
-> - [星と少女](https://www.pixiv.net/artworks/108916539) by [Stella](https://www.pixiv.net/users/93273965)
-> - [Rabbit - v1.4 Showcase](https://civitai.com/posts/586908) by [Rabbit_YourMajesty](https://civitai.com/user/Rabbit_YourMajesty)
+我的一些项目:
+::github{repo="lRENyaaa/jphira-mp"}
+::github{repo="lRENyaaa/jphira-mp-protocol"}
+::github{repo="RenYuan-MC/RYSurvival"}
+::github{repo="RenYuan-MC/ResidenceForm"}
+::github{repo="RenYuan-MC/QuickShopForm"}

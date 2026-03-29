@@ -8,33 +8,33 @@ import type {
 import { LinkPreset } from "./types/config";
 
 export const siteConfig: SiteConfig = {
-	title: "Fuwari",
-	subtitle: "Demo Site",
-	lang: "en", // Language code, e.g. 'en', 'zh_CN', 'ja', etc.
+	title: "任渊的博客",
+	subtitle: "-",
+	lang: "zh_CN", // 语言代码，例如 'en'、'zh_CN'、'ja' 等。
 	themeColor: {
-		hue: 250, // Default hue for the theme color, from 0 to 360. e.g. red: 0, teal: 200, cyan: 250, pink: 345
-		fixed: false, // Hide the theme color picker for visitors
+		hue: 250, // 主题颜色的默认色相，范围为 0 到 360。例如：红色：0，蓝绿色：200，青色：250，粉色：345
+		fixed: false, // 对访客隐藏主题颜色选择器
 	},
 	banner: {
-		enable: false,
-		src: "assets/images/demo-banner.png", // Relative to the /src directory. Relative to the /public directory if it starts with '/'
-		position: "center", // Equivalent to object-position, only supports 'top', 'center', 'bottom'. 'center' by default
+		enable: true,
+		src: "https://rba.kanostar.top/adapt", // 相对于 /src 目录。如果以 '/' 开头，则相对于 /public 目录
+		position: "center", // 等同于 object-position，仅支持 'top'、'center'、'bottom'。默认值为 'center'
 		credit: {
-			enable: false, // Display the credit text of the banner image
-			text: "", // Credit text to be displayed
-			url: "", // (Optional) URL link to the original artwork or artist's page
+			enable: false, // 显示横幅图片的署名文字
+			text: "", // 要显示的署名文字
+			url: "", // （可选）原始作品或艺术家页面的 URL 链接
 		},
 	},
 	toc: {
-		enable: true, // Display the table of contents on the right side of the post
-		depth: 2, // Maximum heading depth to show in the table, from 1 to 3
+		enable: true, // 在文章右侧显示目录
+		depth: 2, // 目录中显示的最大标题层级，范围为 1 到 3
 	},
 	favicon: [
-		// Leave this array empty to use the default favicon
+		// 将此数组留空以使用默认 favicon
 		// {
-		//   src: '/favicon/icon.png',    // Path of the favicon, relative to the /public directory
-		//   theme: 'light',              // (Optional) Either 'light' or 'dark', set only if you have different favicons for light and dark mode
-		//   sizes: '32x32',              // (Optional) Size of the favicon, set only if you have favicons of different sizes
+		//   src: '/favicon/icon.png',    // favicon 的路径，相对于 /public 目录
+		//   theme: 'light',              // （可选）'light' 或 'dark'，仅当浅色和深色模式使用不同 favicon 时设置
+		//   sizes: '32x32',              // （可选）favicon 的尺寸，仅当你有不同尺寸的 favicon 时设置
 		// }
 	],
 };
@@ -46,24 +46,18 @@ export const navBarConfig: NavBarConfig = {
 		LinkPreset.About,
 		{
 			name: "GitHub",
-			url: "https://github.com/saicaca/fuwari", // Internal links should not include the base path, as it is automatically added
-			external: true, // Show an external link icon and will open in a new tab
+			url: "https://github.com/lRENyaaa", // 内部链接不应包含基础路径，因为系统会自动添加
+			external: true, // 显示外部链接图标，并在新标签页中打开
 		},
 	],
 };
 
 export const profileConfig: ProfileConfig = {
-	avatar: "assets/images/demo-avatar.png", // Relative to the /src directory. Relative to the /public directory if it starts with '/'
-	name: "Lorem Ipsum",
-	bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+	avatar: "assets/images/avatar.jpg", // 相对于 /src 目录。如果以 '/' 开头，则相对于 /public 目录
+	name: "李任渊",
+	copyrightName: "lRENyaaa",
+	bio: "真·啥也不会",
 	links: [
-		{
-			name: "Twitter",
-			icon: "fa6-brands:twitter", // Visit https://icones.js.org/ for icon codes
-			// You will need to install the corresponding icon set if it's not already included
-			// `pnpm add @iconify-json/<icon-set-name>`
-			url: "https://twitter.com",
-		},
 		{
 			name: "Steam",
 			icon: "fa6-brands:steam",
@@ -84,7 +78,7 @@ export const licenseConfig: LicenseConfig = {
 };
 
 export const expressiveCodeConfig: ExpressiveCodeConfig = {
-	// Note: Some styles (such as background color) are being overridden, see the astro.config.mjs file.
-	// Please select a dark theme, as this blog theme currently only supports dark background color
+	// 注意：某些样式（例如背景颜色）已被覆盖，详见 astro.config.mjs 文件。
+	// 请选择深色主题，因为当前博客主题仅支持深色背景
 	theme: "github-dark",
 };
