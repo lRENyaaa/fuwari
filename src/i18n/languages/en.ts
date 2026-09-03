@@ -35,4 +35,8 @@ export const en: Translation = {
 	[Key.author]: "Author",
 	[Key.publishedAt]: "Published at",
 	[Key.license]: "License",
+
+	[Key.siteStats]: "Site Stats",
+	[Key.pageviews]: "Total Views",
+	[Key.visitors]: "Total Visitors",
 };

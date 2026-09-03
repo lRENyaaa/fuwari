@@ -35,4 +35,8 @@ export const th: Translation = {
 	[Key.author]: "ผู้เขียน",
 	[Key.publishedAt]: "เผยแพร่เมื่อ",
 	[Key.license]: "สัญญาอนุญาต",
+
+	[Key.siteStats]: "สถิติเว็บไซต์",
+	[Key.pageviews]: "ยอดดูทั้งหมด",
+	[Key.visitors]: "ผู้เข้าชมทั้งหมด",
 };

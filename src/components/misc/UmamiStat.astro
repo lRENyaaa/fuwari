@@ -1,0 +1,51 @@
+---
+// 可复用的 Umami 统计数字展示组件。
+// 三种状态：加载中显示 "..."，成功显示格式化数字，失败显示 "--"。
+// 统计接口请求失败不会影响页面渲染。
+import { getUmamiMetric } from "@/utils/umami-utils";
+
+interface Props {
+	// 统计指标：pageviews（浏览量/PV）、visitors（访客/UV）等
+	metric: string;
+	// 可选：页面路径，用于展示单页访问量；必须与 Umami 记录的 pathname 一致
+	path?: string;
+	class?: string;
+}
+
+const { metric, path, class: className } = Astro.props;
+---
+
+<umami-stat class:list={["inline-block", className]} data-metric={metric} data-path={path}>
+    <span class="umami-value">...</span>
+</umami-stat>
+
+<script>
+	import { getUmamiMetric } from "@/utils/umami-utils";
+
+	class UmamiStatElement extends HTMLElement {
+		private connected = false;
+
+		connectedCallback() {
+			// 防止同一元素被重复初始化（如页面切换时元素被移动）
+			if (this.connected) return;
+			this.connected = true;
+			this.render();
+		}
+
+		private async render() {
+			const valueEl = this.querySelector(".umami-value") ?? this;
+			const metric = this.dataset.metric || "pageviews";
+			const path = this.dataset.path || undefined;
+			try {
+				const value = await getUmamiMetric(metric, { path });
+				valueEl.textContent = value === null ? "--" : value.toLocaleString();
+			} catch {
+				valueEl.textContent = "--";
+			}
+		}
+	}
+
+	if (!customElements.get("umami-stat")) {
+		customElements.define("umami-stat", UmamiStatElement);
+	}
+</script>

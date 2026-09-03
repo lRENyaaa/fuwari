@@ -4,6 +4,7 @@ import type {
 	NavBarConfig,
 	ProfileConfig,
 	SiteConfig,
+	UmamiConfig,
 } from "./types/config";
 import { LinkPreset } from "./types/config";
 
@@ -75,6 +76,14 @@ export const licenseConfig: LicenseConfig = {
 	enable: true,
 	name: "CC BY-NC-SA 4.0",
 	url: "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+};
+
+export const umamiConfig: UmamiConfig = {
+	enable: true,
+	baseUrl: "https://u.a.07210700.xyz/", // Umami 实例地址
+	websiteId: "5cc8e1b4-cb8c-4ac5-b3af-3f521bcdd720",
+	shareId: "JnUy9Ub3xfiESqR7", // Umami 后台"分享链接"中的 Share ID，仅用于公开统计
+	cacheTtl: 3600000, // 统计数据本地缓存有效期：1 小时
 };
 
 export const expressiveCodeConfig: ExpressiveCodeConfig = {

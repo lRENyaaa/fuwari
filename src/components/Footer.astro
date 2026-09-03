@@ -1,9 +1,16 @@
 ---
 
-import { profileConfig } from "../config";
+import { Icon } from "astro-icon/components";
+import I18nKey from "../i18n/i18nKey";
+import { i18n } from "../i18n/translation";
+import UmamiStat from "./misc/UmamiStat.astro";
+import { profileConfig, umamiConfig } from "../config";
 import { url } from "../utils/url-utils";
 
 const currentYear = new Date().getFullYear();
+
+// Umami 公开统计面板链接
+const umamiShareUrl = `${umamiConfig.baseUrl.replace(/\/+$/, "")}/share/${umamiConfig.shareId}`;
 ---
 
 <!--<div class="border-t border-[var(&#45;&#45;primary)] mx-16 border-dashed py-8 max-w-[var(&#45;&#45;page-width)] flex flex-col items-center justify-center px-6">-->
@@ -17,4 +24,19 @@ const currentYear = new Date().getFullYear();
         <a class="transition link text-[var(--primary)] font-medium" target="_blank" href="https://astro.build">Astro</a> &
         <a class="transition link text-[var(--primary)] font-medium" target="_blank" href="https://github.com/saicaca/fuwari">Fuwari</a>
     </div>
+    {umamiConfig.enable && (
+        <a class="transition link text-sm text-center mt-2 flex flex-row flex-wrap items-center justify-center gap-x-4 gap-y-1 text-[var(--primary)] font-medium"
+           href={umamiShareUrl} target="_blank" rel="noopener" aria-label="Umami site stats">
+            <span class="flex flex-row items-center gap-1.5">
+                <Icon name="material-symbols:visibility-outline-rounded"></Icon>
+                {i18n(I18nKey.pageviews)}
+                <UmamiStat metric="pageviews"></UmamiStat>
+            </span>
+            <span class="flex flex-row items-center gap-1.5">
+                <Icon name="material-symbols:group-outline-rounded"></Icon>
+                {i18n(I18nKey.visitors)}
+                <UmamiStat metric="visitors"></UmamiStat>
+            </span>
+        </a>
+    )}
 </div>

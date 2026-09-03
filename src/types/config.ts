@@ -101,3 +101,14 @@ export type BlogPostData = {
 export type ExpressiveCodeConfig = {
 	theme: string;
 };
+
+export type UmamiConfig = {
+	enable: boolean;
+	// Umami 实例地址，例如 "https://umami.example.com/"
+	baseUrl: string;
+	websiteId: string;
+	// Umami 公开分享 ID（站点设置中的 Share URL 末段），用于公开读取统计数据
+	shareId: string;
+	// 统计数据本地缓存有效期（毫秒）
+	cacheTtl: number;
+};

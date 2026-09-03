@@ -18,6 +18,7 @@ import {
 import { defaultFavicons } from "../constants/icon";
 import type { Favicon } from "../types/config";
 import { pathsEqual, url } from "../utils/url-utils";
+import { umamiConfig } from "../config";
 import "katex/dist/katex.css";
 
 interface Props {
@@ -56,6 +57,10 @@ if (title) {
 
 const favicons: Favicon[] =
 	siteConfig.favicon.length > 0 ? siteConfig.favicon : defaultFavicons;
+
+// Umami 访问统计脚本
+const umamiEnabled = umamiConfig.enable;
+const umamiScriptSrc = `${umamiConfig.baseUrl.replace(/\/+$/, "")}/script.js`;
 
 // const siteLang = siteConfig.lang.replace('_', '-')
 if (!lang) {
@@ -144,6 +149,9 @@ const bannerOffset =
 
 
 		<slot name="head"></slot>
+
+		<!-- Umami visit tracking -->
+		{umamiEnabled && <script is:inline defer src={umamiScriptSrc} data-website-id={umamiConfig.websiteId}></script>}
 
 		<link rel="alternate" type="application/rss+xml" title={profileConfig.name} href={`${Astro.site}rss.xml`}/>
 
