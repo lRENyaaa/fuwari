@@ -9,7 +9,7 @@ import { LinkPreset } from "./types/config";
 
 export const siteConfig: SiteConfig = {
 	title: "任渊的博客",
-	subtitle: "-",
+	subtitle: "一个神秘的博客",
 	lang: "zh_CN", // 语言代码，例如 'en'、'zh_CN'、'ja' 等。
 	themeColor: {
 		hue: 250, // 主题颜色的默认色相，范围为 0 到 360。例如：红色：0，蓝绿色：200，青色：250，粉色：345
@@ -31,11 +31,11 @@ export const siteConfig: SiteConfig = {
 	},
 	favicon: [
 		// 将此数组留空以使用默认 favicon
-		// {
-		//   src: '/favicon/icon.png',    // favicon 的路径，相对于 /public 目录
-		//   theme: 'light',              // （可选）'light' 或 'dark'，仅当浅色和深色模式使用不同 favicon 时设置
-		//   sizes: '32x32',              // （可选）favicon 的尺寸，仅当你有不同尺寸的 favicon 时设置
-		// }
+		{
+		  src: '/favicon.ico',    // favicon 的路径，相对于 /public 目录
+		  theme: 'light',              // （可选）'light' 或 'dark'，仅当浅色和深色模式使用不同 favicon 时设置
+		  sizes: '',              // （可选）favicon 的尺寸，仅当你有不同尺寸的 favicon 时设置
+		}
 	],
 };
 
@@ -59,14 +59,14 @@ export const profileConfig: ProfileConfig = {
 	bio: "真·啥也不会",
 	links: [
 		{
-			name: "Steam",
-			icon: "fa6-brands:steam",
-			url: "https://store.steampowered.com",
+			name: "Bilibili",
+			icon: "fa6-brands:bilibili",
+			url: "https://space.bilibili.com/457639058",
 		},
 		{
 			name: "GitHub",
 			icon: "fa6-brands:github",
-			url: "https://github.com/saicaca/fuwari",
+			url: "https://github.com/lRENyaaa",
 		},
 	],
 };
