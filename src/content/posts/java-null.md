@@ -2,7 +2,7 @@
 title: 为什么Java的null如此糟糕
 published: 2026-09-03
 description: Java 的 null 为什么如此糟糕？从 Groovy 的安全调用到 Kotlin 的可空类型，看看 Java 如何把本应由类型系统承担的空值处理，变成开发者挥之不去的心智负担。
-tags: [Java, 开发]
+tags: [Java, 开发, 随笔]
 category: 开发
 draft: false
 ---
@@ -15,7 +15,6 @@ Java 中的 null 已经被人们讨论了很多年，为什么我们说 Java 的
 ``` groovy
 def length = nullable?.length // Groovy 
 ```
-
 ``` java
 Integer length = nullable != null ? nullable.length : null; // Java
 ```
